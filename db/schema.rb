@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_182539) do
+ActiveRecord::Schema.define(version: 2021_05_17_183521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "periods", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "reports_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "period_id"
+    t.text "current_committees_rocks"
+    t.text "future_committees_rocks"
+    t.text "current_internal_support"
+    t.text "future_internal_support"
+    t.text "current_projects"
+    t.text "future_projects"
+    t.text "current_other"
+    t.text "future_other"
+    t.date "pto"
+    t.date "pvt"
+    t.date "ooo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["period_id"], name: "index_reports_on_period_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -1,0 +1,51 @@
+# == Schema Information
+#
+# Table name: reports
+#
+#  id                       :bigint           not null, primary key
+#  user_id                  :integer
+#  period_id                :integer
+#  current_committees_rocks :text
+#  future_committees_rocks  :text
+#  current_internal_support :text
+#  future_internal_support  :text
+#  current_projects         :text
+#  future_projects          :text
+#  current_other            :text
+#  future_other             :text
+#  pto                      :date
+#  pvt                      :date
+#  ooo                      :date
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#
+
+one:
+  user_id: 1
+  period_id: 1
+  current_committees_rocks: MyText
+  future_committees_rocks: MyText
+  current_internal_support: MyText
+  future_internal_support: MyText
+  current_projects: MyText
+  future_projects: MyText
+  current_other: MyText
+  future_other: MyText
+  pto: 2021-05-17
+  pvt: 2021-05-17
+  ooo: 2021-05-17
+
+two:
+  user_id: 1
+  period_id: 1
+  current_committees_rocks: MyText
+  future_committees_rocks: MyText
+  current_internal_support: MyText
+  future_internal_support: MyText
+  current_projects: MyText
+  future_projects: MyText
+  current_other: MyText
+  future_other: MyText
+  pto: 2021-05-17
+  pvt: 2021-05-17
+  ooo: 2021-05-17
